@@ -10,6 +10,11 @@ class Fruit_list(ListView):
     context_object_name = 'fruits'
     template_name = "fruit/fruit_list.html"
 
+class Fruit_list_only(ListView):
+
+    model = Fruit
+    context_object_name = 'fruits'
+    template_name = "fruit/fruit_list_only.html"
 #class Blog_page(ListView):
 
     #model = Blog

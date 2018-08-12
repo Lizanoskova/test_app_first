@@ -1,0 +1,5 @@
+{% for fruit in fruits %}
+
+       <div><a href="{% url "fruits:currentfruit" pk=fruit.pk %}">{{ fruit.name }}</a></div>
+
+    {% endfor %}

@@ -8,11 +8,17 @@
 {% endblock %}
 
 {% block content %}
-
-  {% for fruit in fruits %}
-
-       <div><a href="{% url "fruits:currentfruit" pk=fruit.pk %}">{{ fruit.name }}</a></div>
-
-    {% endfor %}
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script>
+        function fetchFruits(){
+            $.get('http://localhost:8080/only', 
+                    function(data){
+                       $('#only').replaceWith(data);
+                    }
+                );
+        }
+        window.setInterval(fetchFruits, 1000)
+    </script>
+    <p id="only">
+    </p>
 {% endblock %}

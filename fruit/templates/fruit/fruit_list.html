@@ -1,0 +1,18 @@
+
+{% block title %}
+<h1>Список фруктов</h1>
+{% endblock %}
+
+{% block menu %}
+
+{% endblock %}
+
+{% block content %}
+
+  {% for fruit in fruits %}
+
+       <div><a href="{% url "fruits:currentfruit" pk=fruit.pk %}">{{ fruit.name }}</a></div>
+
+    {% endfor %}
+
+{% endblock %}
